@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Todo from './components/TodoComponents/Todo';
+import TodoList from './components/TodoComponents/TodoList';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -24,15 +24,16 @@ class App extends React.Component {
       <div className='App'>
 
         <div className='header'>
-          <h2>Your To Do App</h2>
+          <h2>The To Do App!</h2>
           </div>
 
         <div className='to-do-list'>
-          {this.state.toDo.map(item => {
-            <Todo 
-              key={item.id} 
-              item={task} />
-          })}
+          {this.state.toDo.map(item => (
+            <TodoList
+              key={item.id}
+              item={item}
+              />
+          ))}
         </div>
 
       </div>
