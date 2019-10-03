@@ -23,15 +23,15 @@ class App extends React.Component {
     }
   }
 
-  addItem = (event, itemName) => {
-    const newItem = {
-      task: null,
+  addItem = (event, taskName) => {
+    const newTask = {
+      task: taskName,
       id: Date.now(),
       completed: false
     }
 
     this.setState({
-      toDo: [newItem, ...this.state.toDo]
+      toDo: [newTask, ...this.state.toDo]
     })
   }
 
@@ -63,7 +63,7 @@ class App extends React.Component {
 
         <div className='to-do-list'>
           <TodoList 
-            key={this.state.id}
+            // key={this.state.id}
             item={this.state.task}
             toDo={this.state.toDo}
           />

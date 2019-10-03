@@ -4,20 +4,14 @@
 import React from 'react';
 
 class TodoForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state={
-            value: ''
-        }
-    }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit}>
                 <input
                     type='text'
-                    value={this.state.value}
-                    onChange={this.handleChange}
+                    value={this.props.value}
+                    onChange={this.props.handleChange}
                 />
 
                 <button>Add Todo</button>
