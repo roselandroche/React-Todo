@@ -35,6 +35,16 @@ class App extends React.Component {
     })
   }
 
+  completed = event => {
+    event.preventDefault()
+
+    this.setState({
+      toDo: this.state.toDo.filter(item => {
+        return !item.completed
+      })
+    })
+  }
+
   handleChange = event => {
     event.preventDefault()
 
@@ -71,6 +81,7 @@ class App extends React.Component {
 
         <TodoForm 
           addItem={this.addItem} 
+          completed={this.completed}
           handleChange={this.handleChange} 
           handleSubmit={this.handleSubmit} 
         />
