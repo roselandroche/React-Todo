@@ -30,6 +30,7 @@ class App extends React.Component {
       completed: false
     }
 
+    console.log(newTask)
     this.setState({
       toDo: [newTask, ...this.state.toDo]
     })
@@ -45,23 +46,7 @@ class App extends React.Component {
     })
   }
 
-  handleChange = event => {
-    event.preventDefault()
-
-    this.setState({
-        [event.target.name]: event.target.value
-    })
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-
-    this.addItem(event, this.state.value)
-
-    this.setState({
-        value: ''
-    })
-  }
+  
 
   render() {
     return (
