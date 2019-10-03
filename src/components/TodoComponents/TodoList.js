@@ -6,12 +6,17 @@
 
 import React from 'react';
 
+import OneToDo from './OneToDo';
+
 const TodoList = props => {
+    console.log(props);
     return (
         <div>
-            <p>{props.item.task}</p>
+            {props.toDo.map(item => (
+                <OneToDo item={item} />
+            ))}
         </div>
-    )
-}
+        )
+    }
 
 export default TodoList;
